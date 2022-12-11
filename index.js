@@ -1,6 +1,6 @@
 var types = [
     /*
-    Dismon Typings Database 3.0
+    Dismon Typings Database 3.1.0
         EXAMPLE ITEM
     {
             name: "NAME",
@@ -14,35 +14,35 @@ var types = [
                 spDefense: "",
                 speed: "",
             },
-            attackProCon: {
+            attackTypemap: {
                 noEffect: "", 
-                notVerEffect: "",
-                supEffect: "",
+                notVeryEffective: "",
+                superEffective: "",
             },
-            defProCon: {
+            defenceTypemap: {
                 noEffect: "", 
-                notVerEffect: "",
-                supEffect: "",
+                notVeryEffective: "",
+                superEffective: "",
             },
-            genOneAtt: {
+            genOneAttackTypemap: {
                 noEffect: "", 
-                notVerEffect: "",
-                supEffect: "",
+                notVeryEffective: "",
+                superEffective: "",
             },
-            genOneDef: {
-                noEffect: "Currently Unavailable", 
-                notVerEffect: "Currently Unavailable",
-                supEffect: "Currently Unavailable",
-            },
-            genTwoToFiveAtt: {
+            genOneDefenseTypemap: {
                 noEffect: "", 
-                notVerEffect: "",
-                supEffect: "",
+                notVeryEffective: "",
+                superEffective: "",
             },
-            genTwoToFiveDef: {
-                noEffect: "Currently Unavailable", 
-                notVerEffect: "Currently Unavailable",
-                supEffect: "Currently Unavailable",
+            genTwoFiveAttackTypemap: {
+                noEffect: "", 
+                notVeryEffective: "",
+                superEffective: "",
+            },
+            genTwoFiveDefenseTypemap: {
+                noEffect: "", 
+                notVeryEffective: "",
+                superEffective: "",
             }
          },
           ANY INFORMATION THAT IS INCORRECT NEEDS TO BE CHANGED.
@@ -64,35 +64,35 @@ var types = [
             spDefense: "64.8",
             speed: "71.1",
          },
-         attackProCon: {
+         attackTypemap: {
             noEffect: "Ghost", 
-            notVerEffect: "Rock, Steel",
-            supEffect: "None",
+            notVeryEffective: "Rock, Steel",
+            superEffective: "None",
          },
-         defProCon: {
+         defenceTypemap: {
             noEffect: "Ghost", 
-            notVerEffect: "None",
-            supEffect: "Fighting",
+            notVeryEffective: "None",
+            superEffective: "Fighting",
          },
-         genOneAtt: {
+         genOneAttackTypemap: {
              noEffect: "Ghost",
-             notVerEffect: "Rock",
-             supEffect: "None",
+             notVeryEffective: "Rock",
+             superEffective: "None",
          },
-         genOneDef: {
+         genOneDefenseTypemap: {
              noEffect: "Currently Unavailable", 
-             notVerEffect: "Currently Unavailable",
-             supEffect: "Currently Unavailable",
+             notVeryEffective: "Currently Unavailable",
+             superEffective: "Currently Unavailable",
          },
-         genTwoToFiveAtt: {
+         genTwoFiveAttackTypemap: {
              noEffect: "Currently Unavailable",
-             notVerEffect: "Currently Unavailable",
-             supEffect: "Currently Unavailable",
+             notVeryEffective: "Currently Unavailable",
+             superEffective: "Currently Unavailable",
          },
-         genTwoToFiveDef: {
+         genTwoFiveDefenseTypemap: {
              noEffect: "Currently Unavailable", 
-             notVerEffect: "Currently Unavailable",
-             supEffect: "Currently Unavailable",
+             notVeryEffective: "Currently Unavailable",
+             superEffective: "Currently Unavailable",
          }
      },
      {
@@ -107,35 +107,35 @@ var types = [
             spDefense: "72.9",
             speed: "75.5",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Water, Rock, Dragon",
-            supEffect: "Grass, Ice, Bug, Steel",
+            notVeryEffective: "Fire, Water, Rock, Dragon",
+            superEffective: "Grass, Ice, Bug, Steel",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Grass, Ice, Bug, Steel, Fairy",
-            supEffect: "Water, Ground, Rock",
+            notVeryEffective: "Fire, Grass, Ice, Bug, Steel, Fairy",
+            superEffective: "Water, Ground, Rock",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Water, Rock, Dragon",
-            supEffect: "Grass, Ice, Bug",
+            notVeryEffective: "Fire, Water, Rock, Dragon",
+            superEffective: "Grass, Ice, Bug",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -150,35 +150,35 @@ var types = [
             spDefense: "71.6",
             speed: "66.2",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None", 
-            notVerEffect: "Water, Grass, Dragon",
-            supEffect: "Fire, Ground, Rock",
+            notVeryEffective: "Water, Grass, Dragon",
+            superEffective: "Fire, Ground, Rock",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Water, Ice, Steel",
-            supEffect: "Electric Grass",
+            notVeryEffective: "Fire, Water, Ice, Steel",
+            superEffective: "Electric Grass",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Water, Grass, Dragon",
-            supEffect: "Fire, Ground, Rock",
+            notVeryEffective: "Water, Grass, Dragon",
+            superEffective: "Fire, Ground, Rock",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -193,35 +193,35 @@ var types = [
             spDefense: "70.8",
             speed: "83.2",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "Ground",
-            notVerEffect: "Electric, Grass, Dragon",
-            supEffect: "Water, Flying",
+            notVeryEffective: "Electric, Grass, Dragon",
+            superEffective: "Water, Flying",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Electric, Flying, Steel",
-            supEffect: "Ground",
+            notVeryEffective: "Electric, Flying, Steel",
+            superEffective: "Ground",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "Ground",
-            notVerEffect: "Electric, Grass, Dragon",
-            supEffect: "Water, Flying",
+            notVeryEffective: "Electric, Grass, Dragon",
+            superEffective: "Water, Flying",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -236,35 +236,35 @@ var types = [
             spDefense: "71.6",
             speed: "61.1",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Grass, Poison, Flying, Bug, Dragon, Steel",
-            supEffect: "Water, Ground, Rock",
+            notVeryEffective: "Fire, Grass, Poison, Flying, Bug, Dragon, Steel",
+            superEffective: "Water, Ground, Rock",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Water, Electric, Grass, Ground",
-            supEffect: "Fire, Ice, Poison, Flying, Bug",
+            notVeryEffective: "Water, Electric, Grass, Ground",
+            superEffective: "Fire, Ice, Poison, Flying, Bug",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Grass, Poison, Flying, Bug, Dragon",
-            supEffect: "Water, Ground, Rock",
+            notVeryEffective: "Fire, Grass, Poison, Flying, Bug, Dragon",
+            superEffective: "Water, Ground, Rock",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -279,35 +279,35 @@ var types = [
             spDefense: "77.1",
             speed: "67.3",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Water, Ice, Steel",
-            supEffect: "Grass, Ground, Flying, Dragon",
+            notVeryEffective: "Fire, Water, Ice, Steel",
+            superEffective: "Grass, Ground, Flying, Dragon",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Ice",
-            supEffect: "Fire, Fighting, Rock, Steel",
+            notVeryEffective: "Ice",
+            superEffective: "Fire, Fighting, Rock, Steel",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Water, Ice",
-            supEffect: "Grass, Ground, Flying, Dragon",
+            notVeryEffective: "Water, Ice",
+            superEffective: "Grass, Ground, Flying, Dragon",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -322,35 +322,35 @@ var types = [
             spDefense: "73.2",
             speed: "78.9",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "Ghost",
-            notVerEffect: "Poison, Flying, Psychic, Bug, Fairy",
-            supEffect: "Normal, Ice, Rock, Dark, Steel",
+            notVeryEffective: "Poison, Flying, Psychic, Bug, Fairy",
+            superEffective: "Normal, Ice, Rock, Dark, Steel",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Bug, Rock, Dark",
-            supEffect: "Flying, Psychic, Fairy",
+            notVeryEffective: "Bug, Rock, Dark",
+            superEffective: "Flying, Psychic, Fairy",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "Ghost",
-            notVerEffect: "Poison, Flying, Psychic, Bug",
-            supEffect: "Normal, Ice, Rock",
+            notVeryEffective: "Poison, Flying, Psychic, Bug",
+            superEffective: "Normal, Ice, Rock",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -365,35 +365,35 @@ var types = [
             spDefense: "71.7",
             speed: "68.3",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "Steel",
-            notVerEffect: "Poison, Ground, Rock, Ghost",
-            supEffect: "Grass, Fairy",
+            notVeryEffective: "Poison, Ground, Rock, Ghost",
+            superEffective: "Grass, Fairy",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Grass, Fighting, Poison, Bug, Fairy",
-            supEffect: "Ground, Psychic",
+            notVeryEffective: "Grass, Fighting, Poison, Bug, Fairy",
+            superEffective: "Ground, Psychic",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Poison, Ground, Rock, Ghost",
-            supEffect: "Grass, Bug",
+            notVeryEffective: "Poison, Ground, Rock, Ghost",
+            superEffective: "Grass, Bug",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -408,35 +408,35 @@ var types = [
             spDefense: "66.1",
             speed: "58.6",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "Flying",
-            notVerEffect: "Grass, Bug",
-            supEffect: "Fire, Electric, Poison, Rock, Steel",
+            notVeryEffective: "Grass, Bug",
+            superEffective: "Fire, Electric, Poison, Rock, Steel",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "Electric",
-            notVerEffect: "Poison, Rock",
-            supEffect: "Water, Grass, Ice",
+            notVeryEffective: "Poison, Rock",
+            superEffective: "Water, Grass, Ice",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "Flying",
-            notVerEffect: "Grass, Bug",
-            supEffect: "Fire, Electric, Poison, Rock",
+            notVeryEffective: "Grass, Bug",
+            superEffective: "Fire, Electric, Poison, Rock",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -451,35 +451,35 @@ var types = [
             spDefense: "71.9",
             speed: "85",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Electric, Rock, Steel",
-            supEffect: "Grass, Fighting, Bug",
+            notVeryEffective: "Electric, Rock, Steel",
+            superEffective: "Grass, Fighting, Bug",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "Ground",
-            notVerEffect: "Grass, Fighting, Bug",
-            supEffect: "Electric, Ice, Rock",
+            notVeryEffective: "Grass, Fighting, Bug",
+            superEffective: "Electric, Ice, Rock",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Electric, Rock",
-            supEffect: "Grass, Fighting, Bug",
+            notVeryEffective: "Electric, Rock",
+            superEffective: "Grass, Fighting, Bug",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -494,35 +494,35 @@ var types = [
             spDefense: "88",
             speed: "76.3",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "Dark",
-            notVerEffect: "Psychic, Steel",
-            supEffect: "Fighting, Poison",
+            notVeryEffective: "Psychic, Steel",
+            superEffective: "Fighting, Poison",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Fighting, Psychic",
-            supEffect: "Bug, Ghost, Dark",
+            notVeryEffective: "Fighting, Psychic",
+            superEffective: "Bug, Ghost, Dark",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Psychic",
-            supEffect: "Fighting, Poison",
+            notVeryEffective: "Psychic",
+            superEffective: "Fighting, Poison",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -537,35 +537,35 @@ var types = [
             spDefense: "65.4",
             speed: "61.6",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Fighting, Poison, Flying, Ghost, Steel, Fairy",
-            supEffect: "Grass, Psychic, Dark",
+            notVeryEffective: "Fire, Fighting, Poison, Flying, Ghost, Steel, Fairy",
+            superEffective: "Grass, Psychic, Dark",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Grass, Fighting, Ground",
-            supEffect: "Fire, Flying, Rock",
+            notVeryEffective: "Grass, Fighting, Ground",
+            superEffective: "Fire, Flying, Rock",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Fighting, Flying, Ghost",
-            supEffect: "Grass, Poison, Psychic",
+            notVeryEffective: "Fire, Fighting, Flying, Ghost",
+            superEffective: "Grass, Poison, Psychic",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -580,35 +580,35 @@ var types = [
             spDefense: "71.4",
             speed: "54.5",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fighting, Ground, Steel",
-            supEffect: "Fire, Ice, Flying, Bug",
+            notVeryEffective: "Fighting, Ground, Steel",
+            superEffective: "Fire, Ice, Flying, Bug",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Normal, Fire, Poison, Flying",
-            supEffect: "Water, Grass, Fighting, Ground, Steel",
+            notVeryEffective: "Normal, Fire, Poison, Flying",
+            superEffective: "Water, Grass, Fighting, Ground, Steel",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fighting, Flying",
-            supEffect: "Fire, Ice, Flying, Bug",
+            notVeryEffective: "Fighting, Flying",
+            superEffective: "Fire, Ice, Flying, Bug",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -623,35 +623,35 @@ var types = [
             spDefense: "78.6",
             speed: "67",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "Normal",
-            notVerEffect: "Dark",
-            supEffect: "Psychic, Ghost",
+            notVeryEffective: "Dark",
+            superEffective: "Psychic, Ghost",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "Normal, Fighting",
-            notVerEffect: "Poison, Bug",
-            supEffect: "Ghost, Dark",
+            notVeryEffective: "Poison, Bug",
+            superEffective: "Ghost, Dark",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "Normal, Psychic",
-            notVerEffect: "None",
-            supEffect: "Ghost",
+            notVeryEffective: "None",
+            superEffective: "Ghost",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -666,35 +666,35 @@ var types = [
             spDefense: "86.4",
             speed: "81.1",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "Fairy",
-            notVerEffect: "Steel",
-            supEffect: "Dragon",
+            notVeryEffective: "Steel",
+            superEffective: "Dragon",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Water, Electric, Grass",
-            supEffect: "Ice, Dragon, Fairy",
+            notVeryEffective: "Fire, Water, Electric, Grass",
+            superEffective: "Ice, Dragon, Fairy",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "None",
-            notVerEffect: "None",
-            supEffect: "Dragon",
+            notVeryEffective: "None",
+            superEffective: "Dragon",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Currently Unavailable", 
-            notVerEffect: "Currently Unavailable",
-            supEffect: "Currently Unavailable",
+            notVeryEffective: "Currently Unavailable",
+            superEffective: "Currently Unavailable",
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -709,35 +709,35 @@ var types = [
             spDefense: "68.6",
             speed: "76.9",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fighting, Dark, Fairy",
-            supEffect: "Psychic, Ghost",
+            notVeryEffective: "Fighting, Dark, Fairy",
+            superEffective: "Psychic, Ghost",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "Psychic",
-            notVerEffect: "Ghost, Dark",
-            supEffect: "Fighting, Bug, Fairy",
+            notVeryEffective: "Ghost, Dark",
+            superEffective: "Fighting, Bug, Fairy",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "Didn't Exist", 
-            notVerEffect: "Didn't Exist",
-            supEffect: "Didn't Exist",
+            notVeryEffective: "Didn't Exist",
+            superEffective: "Didn't Exist",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Didn't Exist", 
-            notVerEffect: "Didn't Exist", 
-            supEffect: "Didn't Exist", 
+            notVeryEffective: "Didn't Exist", 
+            superEffective: "Didn't Exist", 
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -752,35 +752,35 @@ var types = [
             spDefense: "81.2",
             speed: "62.3",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Water, Electric, Steel",
-            supEffect: "Ice, Rock, Fairy",
+            notVeryEffective: "Fire, Water, Electric, Steel",
+            superEffective: "Ice, Rock, Fairy",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "Poison",
-            notVerEffect: "Normal, Grass, Ice, Flying, Psychic, Bug, Rock, Dragon, Fairy",
-            supEffect: "Fire, Fighting, Ground",
+            notVeryEffective: "Normal, Grass, Ice, Flying, Psychic, Bug, Rock, Dragon, Fairy",
+            superEffective: "Fire, Fighting, Ground",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "Didn't Exist", 
-            notVerEffect: "Didn't Exist",
-            supEffect: "Didn't Exist",
+            notVeryEffective: "Didn't Exist",
+            superEffective: "Didn't Exist",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Didn't Exist", 
-            notVerEffect: "Didn't Exist", 
-            supEffect: "Didn't Exist", 
+            notVeryEffective: "Didn't Exist", 
+            superEffective: "Didn't Exist", 
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
            noEffect: "Currently Unavailable",
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
            noEffect: "Currently Unavailable", 
-           notVerEffect: "Currently Unavailable",
-           supEffect: "Currently Unavailable",
+           notVeryEffective: "Currently Unavailable",
+           superEffective: "Currently Unavailable",
        }
      },
      {
@@ -795,35 +795,35 @@ var types = [
             spDefense: "85.9",
             speed: "64.8",
         },
-        attackProCon: {
+        attackTypemap: {
             noEffect: "None",
-            notVerEffect: "Fire, Poison, Steel",
-            supEffect: "Fighting, Dragon, Dark",
+            notVeryEffective: "Fire, Poison, Steel",
+            superEffective: "Fighting, Dragon, Dark",
         },
-        defProCon: {
+        defenceTypemap: {
             noEffect: "Dragon",
-            notVerEffect: "Fighting, Bug, Dark",
-            supEffect: "Poison, Steel",
+            notVeryEffective: "Fighting, Bug, Dark",
+            superEffective: "Poison, Steel",
         },
-        genOneAtt: {
+        genOneAttackTypemap: {
             noEffect: "Didn't Exist", 
-            notVerEffect: "Didn't Exist",
-            supEffect: "Didn't Exist",
+            notVeryEffective: "Didn't Exist",
+            superEffective: "Didn't Exist",
         },
-        genOneDef: {
+        genOneDefenseTypemap: {
             noEffect: "Didn't Exist", 
-            notVerEffect: "Didn't Exist", 
-            supEffect: "Didn't Exist", 
+            notVeryEffective: "Didn't Exist", 
+            superEffective: "Didn't Exist", 
         },
-        genTwoToFiveAtt: {
+        genTwoFiveAttackTypemap: {
             noEffect: "Didn't Exist", 
-            notVerEffect: "Didn't Exist",
-            supEffect: "Didn't Exist",
+            notVeryEffective: "Didn't Exist",
+            superEffective: "Didn't Exist",
        },
-       genTwoToFiveDef: {
+       genTwoFiveDefenseTypemap: {
             noEffect: "Didn't Exist", 
-            notVerEffect: "Didn't Exist",
-            supEffect: "Didn't Exist",
+            notVeryEffective: "Didn't Exist",
+            superEffective: "Didn't Exist",
        }
      }
 ];
