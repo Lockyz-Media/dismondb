@@ -1,5 +1,6 @@
 ![npm](https://img.shields.io/npm/v/pokemontypedex)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/lockyz-dev/pokemontypedex)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Lockyz-Dev/pokemontypedex)
 
 # Typedex
 The typedex is a node.js module that allows you to show information on all the Types in the Pokemon Games
