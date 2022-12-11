@@ -80,19 +80,19 @@ var types = [
              superEffective: "None",
          },
          genOneDefenseTypemap: {
-             noEffect: "Currently Unavailable", 
-             notVeryEffective: "Currently Unavailable",
-             superEffective: "Currently Unavailable",
+             noEffect: "Ghost", 
+             notVeryEffective: "None",
+             superEffective: "Fighting",
          },
          genTwoFiveAttackTypemap: {
-             noEffect: "Currently Unavailable",
-             notVeryEffective: "Currently Unavailable",
-             superEffective: "Currently Unavailable",
+             noEffect: "Ghost",
+             notVeryEffective: "Rock, Steel",
+             superEffective: "None",
          },
          genTwoFiveDefenseTypemap: {
-             noEffect: "Currently Unavailable", 
-             notVeryEffective: "Currently Unavailable",
-             superEffective: "Currently Unavailable",
+             noEffect: "Ghost",
+             notVeryEffective: "None",
+             superEffective: "Fighting",
          }
      },
      {
@@ -123,19 +123,19 @@ var types = [
             superEffective: "Grass, Ice, Bug",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Fire, Grass, Bug",
+            superEffective: "Water, Ground, Rock",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fire, Water, Rock, Dragon",
+           superEffective: "Grass, Ice, Bug, Steel",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fire, Grass, Ice, Bug, Steel",
+           superEffective: "Water, Ground, Rock",
        }
      },
      {
@@ -166,19 +166,19 @@ var types = [
             superEffective: "Fire, Ground, Rock",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Fire, Water, Ice",
+            superEffective: "Electric, Grass",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Water, Grass, Dragon",
+           superEffective: "Fire, Ground, Rock",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fire, Water, Ice, Steel",
+           superEffective: "Electric, Grass",
        }
      },
      {
@@ -209,19 +209,19 @@ var types = [
             superEffective: "Water, Flying",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Electric, Flying",
+            superEffective: "Ground",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Ground",
+           notVeryEffective: "Electric, Grass, Dragon",
+           superEffective: "Water, Flying",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Electric, Flying, Steel",
+           superEffective: "Ground",
        }
      },
      {
@@ -252,19 +252,19 @@ var types = [
             superEffective: "Water, Ground, Rock",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Water, Electric, Grass, Ground",
+            superEffective: "Fire, Ice, Poison, Flying, Bug",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fire, Grass, Poison, Flying, Dragon, Steel",
+           superEffective: "Water, Ground, Rock",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Water, Electric, Grass, Ground",
+           superEffective: "Fire, Ice, Poison, Flying, Bug",
        }
      },
      {
@@ -295,19 +295,19 @@ var types = [
             superEffective: "Grass, Ground, Flying, Dragon",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Ice",
+            superEffective: "Fire, Fighting, Rock",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fire, Water, Ice, Steel",
+           superEffective: "Grass, Ground, Flying, Dragon",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Ice",
+           superEffective: "Fire, Fighting, Rock, Steel",
        }
      },
      {
@@ -338,19 +338,19 @@ var types = [
             superEffective: "Normal, Ice, Rock",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Bug, Rock",
+            superEffective: "Flying, Psychic",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Ghost",
+           notVeryEffective: "Poison, Flying, Poison, Bug",
+           superEffective: "Normal, Ice, Rock, Dark, Steel",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Bug, Rock, Dark",
+           superEffective: "Flying, Psychic",
        }
      },
      {
@@ -381,19 +381,19 @@ var types = [
             superEffective: "Grass, Bug",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Grass, Fighting, Poison",
+            superEffective: "Ground, Psychic, Bug",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+            noEffect: "Steel",
+            notVeryEffective: "Poison, Ground, Rock, Ghost",
+            superEffective: "Grass",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Grass, Fighting, Poison, Bug",
+            superEffective: "Ground, Psychic",
        }
      },
      {
@@ -424,19 +424,19 @@ var types = [
             superEffective: "Fire, Electric, Poison, Rock",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "Electric",
+            notVeryEffective: "Poison, Rock",
+            superEffective: "Water, Grass, Ice",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Flying",
+           notVeryEffective: "Grass, Bug",
+           superEffective: "Fire, Electric, Poison, Rock, Steel",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Electric",
+           notVeryEffective: "Poison, Rock",
+           superEffective: "Water, Grass, Ice",
        }
      },
      {
@@ -467,19 +467,19 @@ var types = [
             superEffective: "Grass, Fighting, Bug",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "Ground",
+            notVeryEffective: "Grass, Fighting, Bug",
+            superEffective: "Electric, Ice, Rock",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Electric, Rock, Steel",
+           superEffective: "Grass, Fighting, Bug",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Ground",
+           notVeryEffective: "Grass, Fighting, Bug",
+           superEffective: "Electric, Ice, Rock",
        }
      },
      {
@@ -510,19 +510,19 @@ var types = [
             superEffective: "Fighting, Poison",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "Ghost",
+            notVeryEffective: "Fighting, Psychic",
+            superEffective: "Bug",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Dark",
+           notVeryEffective: "Psychic, Steel",
+           superEffective: "Fighting, Poison",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fighting, Psychic",
+           superEffective: "Bug, Ghost, Dark",
        }
      },
      {
@@ -553,19 +553,19 @@ var types = [
             superEffective: "Grass, Poison, Psychic",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Grass, Fighting, Ground",
+            superEffective: "Fire, Poison, Flying, Rock",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fire, Fighting, Poison, Flying, Ghost, Steel",
+           superEffective: "Grass, Psychic, Dark",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Grass, Fighting, Ground",
+           superEffective: "Fire, Flying, Rock",
        }
      },
      {
@@ -596,19 +596,19 @@ var types = [
             superEffective: "Fire, Ice, Flying, Bug",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Normal, Fire, Poison, Flying",
+            superEffective: "Water, Grass, Fighting, Ground",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fighting, Ground, Steel",
+           superEffective: "Fire, Ice, Flying, Bug",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Normal, Fire, Poison, Flying",
+           superEffective: "Water, Grass, Fighting, Ground, Steel",
        }
      },
      {
@@ -639,19 +639,19 @@ var types = [
             superEffective: "Ghost",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "Normal, Fighting",
+            notVeryEffective: "Poison, Bug",
+            superEffective: "Ghost",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Normal",
+           notVeryEffective: "Dark, Steel",
+           superEffective: "Psychic, Ghost",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Normal, Fighting",
+           notVeryEffective: "Poison, Bug",
+           superEffective: "Ghost, Dark",
        }
      },
      {
@@ -682,19 +682,19 @@ var types = [
             superEffective: "Dragon",
         },
         genOneDefenseTypemap: {
-            noEffect: "Currently Unavailable", 
-            notVeryEffective: "Currently Unavailable",
-            superEffective: "Currently Unavailable",
+            noEffect: "None",
+            notVeryEffective: "Fire, Water, Electric, Grass",
+            superEffective: "Ice, Dragon",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Steel",
+           superEffective: "Dragon",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fire, Water, Electric, Grass",
+           superEffective: "Ice, Dragon",
        }
      },
      {
@@ -725,19 +725,19 @@ var types = [
             superEffective: "Didn't Exist",
         },
         genOneDefenseTypemap: {
-            noEffect: "Didn't Exist", 
-            notVeryEffective: "Didn't Exist", 
-            superEffective: "Didn't Exist", 
+            noEffect: "Didn't Exist",
+            notVeryEffective: "Didn't Exist",
+            superEffective: "Didn't Exist",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fighting, Dark, Steel",
+           superEffective: "Psychic, Ghost",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Psychic",
+           notVeryEffective: "Ghost, Dark",
+           superEffective: "Fighting, Bug",
        }
      },
      {
@@ -763,24 +763,24 @@ var types = [
             superEffective: "Fire, Fighting, Ground",
         },
         genOneAttackTypemap: {
-            noEffect: "Didn't Exist", 
+            noEffect: "Didn't Exist",
             notVeryEffective: "Didn't Exist",
             superEffective: "Didn't Exist",
         },
         genOneDefenseTypemap: {
-            noEffect: "Didn't Exist", 
-            notVeryEffective: "Didn't Exist", 
-            superEffective: "Didn't Exist", 
+            noEffect: "Didn't Exist",
+            notVeryEffective: "Didn't Exist",
+            superEffective: "Didn't Exist",
         },
         genTwoFiveAttackTypemap: {
-           noEffect: "Currently Unavailable",
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "None",
+           notVeryEffective: "Fire, Water, Electric, Steel",
+           superEffective: "Ice, Rock",
        },
        genTwoFiveDefenseTypemap: {
-           noEffect: "Currently Unavailable", 
-           notVeryEffective: "Currently Unavailable",
-           superEffective: "Currently Unavailable",
+           noEffect: "Poison",
+           notVeryEffective: "Normal, Grass, Ice, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel",
+           superEffective: "Fire, Fighting, Ground",
        }
      },
      {
@@ -806,22 +806,22 @@ var types = [
             superEffective: "Poison, Steel",
         },
         genOneAttackTypemap: {
-            noEffect: "Didn't Exist", 
+            noEffect: "Didn't Exist",
             notVeryEffective: "Didn't Exist",
             superEffective: "Didn't Exist",
         },
         genOneDefenseTypemap: {
-            noEffect: "Didn't Exist", 
-            notVeryEffective: "Didn't Exist", 
-            superEffective: "Didn't Exist", 
+            noEffect: "Didn't Exist",
+            notVeryEffective: "Didn't Exist",
+            superEffective: "Didn't Exist",
         },
         genTwoFiveAttackTypemap: {
-            noEffect: "Didn't Exist", 
+            noEffect: "Didn't Exist",
             notVeryEffective: "Didn't Exist",
             superEffective: "Didn't Exist",
        },
        genTwoFiveDefenseTypemap: {
-            noEffect: "Didn't Exist", 
+            noEffect: "Didn't Exist",
             notVeryEffective: "Didn't Exist",
             superEffective: "Didn't Exist",
        }
