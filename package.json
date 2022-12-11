@@ -1,6 +1,6 @@
 {
   "name": "pokemontypedex",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "A node module created to give users information regarding all the types in the pokemon games",
   "main": "index.js",
   "scripts": {
@@ -10,10 +10,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lockyz/pokemontypedex.git"
+    "url": "git+https://https://github.com/Lockyz-Dev/pokemontypedex.git"
   },
   "bugs": {
-    "url": "https://github.com/lockyz/pokemontypedex/issues"
+    "url": "https://https://github.com/Lockyz-Dev/pokemontypedex/issues"
   },
-  "homepage": "https://github.com/lockyz/pokemontypedex#readme"
+  "homepage": "https://https://github.com/Lockyz-Dev/pokemontypedex#readme"
 }
