@@ -19,12 +19,33 @@ Basically, the Typedex is a collection of information on the various types from 
 ## Installation
 `npm install pokemontypedex`
 
+## Current Update
+- Added .moveCount
+- Added .singleTypePokemonCount
+- Added .dualTypePokemonCount
+- Moved all counters under .counts
+- Added counters for every single generation
+
 ## Documentation
 This documentation is unfinished and will be worked on more when some variables are renamed.
 ### Information
 - `.name` - The name of the specific type
 - `.genAdded` - The generation in which the type was added
-- `.pokemonCount` - The amount of pokemon with this type *as of generation 9*
+
+## Counts
+- `.counts.totalPokemonCount` - The amount of pokemon with this type *as of generation 9*
+- `.counts.moveCount` - The amount of moves with this type *as of generation 9*
+- `.counts.singleTypePokemonCount` - The amount of single-typed pokemon with this type
+- `.counts.dualTypePokemonCount` - The amount of dual-typed pokemon with this type
+- `.counts.gen1PokemonCount` - The amount of generation 1 pokemon with this type
+- `.counts.gen2PokemonCount` - The amount of generation 2 pokemon with this type
+- `.counts.gen3PokemonCount` - The amount of generation 3 pokemon with this type
+- `.counts.gen4PokemonCount` - The amount of generation 4 pokemon with this type
+- `.counts.gen5PokemonCount` - The amount of generation 5 pokemon with this type
+- `.counts.gen6PokemonCount` - The amount of generation 6 pokemon with this type
+- `.counts.gen7PokemonCount` - The amount of generation 7 pokemon with this type
+- `.counts.gen8PokemonCount` - The amount of generation 8 pokemon with this type
+- `.counts.gen9PokemonCount` - The amount of generation 9 pokemon with this type
 
 ### Current Generation
 - `.attackTypemap` - The current attack typemap, the name is subject to change.

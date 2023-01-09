@@ -1,10 +1,10 @@
 {
   "name": "pokemontypedex",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "A node module created to give users information regarding all the types in the pokemon games",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test.js"
   },
   "author": "Lockyz Dev",
   "license": "ISC",
