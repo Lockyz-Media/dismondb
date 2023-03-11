@@ -2,8 +2,8 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/lockyz-dev/pokemontypedex)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Lockyz-Dev/pokemontypedex)
 
-# Typedex
-The typedex is a node.js module that allows you to show information on all the Types in the Pokemon Games
+# Dismon Database
+The Dismon Database is a node.js module that allows you to show information on all the Types in the Pokemon Games
 
 ## Features
 - Easy to use!
@@ -11,10 +11,12 @@ The typedex is a node.js module that allows you to show information on all the T
 - The database is constantly being expanded and improved upon
 
 ## Description
-The typedex was a feature we used in a few of our own bots.
+The Dismon Database was a feature we used in a few of our own bots.
 We wanted to open-source it and give everyone access.
 
-Basically, the Typedex is a collection of information on the various types from the game Pokemon.
+Basically, the Dismon Database is full of information on any of the below.
+- Pokemon Types
+- MORE to come
 
 ## Installation
 `npm install pokemontypedex`
