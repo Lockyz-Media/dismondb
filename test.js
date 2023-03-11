@@ -1,10 +1,9 @@
-/*const types = require('./index.js')
-const prompt = require('prompt-sync') ();
+const types = require('./indexv4.js')
 
-const type = prompt('What type do you want information for?');
+const type = "Water";
 
 for (var i=0;i<types.length;i++) {
-    if(type == types[i].name.toLowerCase()) {
-        console.log(types[i])
+    if(type == types[i].name.en) {
+        console.log(types[i].typemaps.generationOne.attack)
     }
-}*/
+}

@@ -1,1096 +1,1741 @@
 var types = [
     /*
-    Dismon Typings Database 3.2.0
+    Dismon Typings Database 4.0.0
         EXAMPLE ITEM
     {
-            name: "NAME",
-            genAdded: "Number",
-            counts: {
-                moveCount: "",
-                totalPokemonCount: "",
-                singleTypePokemonCount: "",
-                dualTypePokemonCount: "",
-                gen1PokemonCount: "",
-                gen2PokemonCount: "",
-                gen3PokemonCount: "",
-                gen4PokemonCount: "",
-                gen5PokemonCount: "",
-                gen6PokemonCount: "",
-                gen7PokemonCount: "",
-                gen8PokemonCount: "",
-                gen9PokemonCount: "",
+        name: {
+            en: "",
+            ja: "",
+        },
+        genAdded: 0,
+        images: {
+            tera: "",
+            symbol: "",
+            icon: "",
+        },
+        counters: {
+            moves: 0,
+            pokemon: {
+                total: 0,
+                singleType: 0,
+                dualType: 0,
+                gen1: 0,
+                gen2: 0,
+                gen3: 0,
+                gen4: 0,
+                gen5: 0,
+                gen6: 0,
+                gen7: 0,
+                gen8: 0,
+                gen9: 0,
             },
-            statAverages: {
-                hp: "",
-                attack: "",
-                defense: "",
-                spAttack: "",
-                spDefense: "",
-                speed: "",
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 0,
+                    attack: 0,
+                    defense: 0,
+                    spAttack: 0,
+                    spDefense: 0,
+                    speed: 0,
+                    total: 0,
+                },
+                fullyEvolved: {
+                    hp: 0,
+                    attack: 0,
+                    defense: 0,
+                    spAttack: 0,
+                    spDefense: 0,
+                    speed: 0,
+                    total: 0,
+                },
             },
-            attackTypemap: {
-                noEffect: "", 
-                notVeryEffective: "",
-                superEffective: "",
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "None",
+                    superEffective: "None",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "None",
+                    superEffective: "None",
+                },
             },
-            defenceTypemap: {
-                noEffect: "", 
-                notVeryEffective: "",
-                superEffective: "",
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "None",
+                    superEffective: "None",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "None",
+                    superEffective: "None",
+                },
             },
-            genOneAttackTypemap: {
-                noEffect: "", 
-                notVeryEffective: "",
-                superEffective: "",
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "None",
+                    superEffective: "None",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "None",
+                    superEffective: "None",
+                },
             },
-            genOneDefenseTypemap: {
-                noEffect: "", 
-                notVeryEffective: "",
-                superEffective: "",
-            },
-            genTwoFiveAttackTypemap: {
-                noEffect: "", 
-                notVeryEffective: "",
-                superEffective: "",
-            },
-            genTwoFiveDefenseTypemap: {
-                noEffect: "", 
-                notVeryEffective: "",
-                superEffective: "",
-            }
-         },
-          ANY INFORMATION THAT IS INCORRECT NEEDS TO BE CHANGED.
-          DESCRIPTIONS CAN ONLY BE ONE LINE. SEPERATE LINES WITH \n
-          All unused Data needs to be removed.
-          All the text before the { on each item needs to be removed.
-          Needs to have a command created in the bot to access it.
-          More information will be added if necessary
+        },
+    },
+         
+         Changes Between versions 3 and 4
+         Added "images"
+         Nested the "Name" and added properties for different languages
+            Only supports English and Japanese at this current time
+         All Typemaps have been nested further
+            Instead of genOneAttackTypemap.noEffect it's typemaps.gen1.noEffect
+            This should increase clarity and all us to add more values in the future.
+            This also means they all can follow the same naming scheme
+            Considering creating "categories" for typemaps
+                So it'd be typemaps.generation.one.noEffect and typemaps.type.fireGround
+                or something like that
+                Probably won't be adding the ability to show typemaps by type
+        Renamed counts to counters
+            Instead of counts.moveCount it's counters.moves
+        Nested the stat averages by two more levels
+            Instead of statAverages.hp it's stats.average.overall.hp
+            More stat types will be added in the future (e.g min stat, max stat)
+        Fixed a few spelling errors
+            Defence not Defense
+        Considering moving from snakeCase to lowercase
+            Not confirming I will, it's highly likely to just stay the way it is.
+        Changed relevant strings to int and long
+        Updated outdated stat averages
+            Some hadn't been set when I updated the db to Gen 9 data
       */
-     {
-         name: "Normal",
-         genAdded: "Gen 1",
-         counts: {
-            moveCount: "200",
-            totalPokemonCount: "149",
-            singleTypePokemonCount: "79",
-            dualTypePokemonCount: "70",
-            gen1PokemonCount: "22",
-            gen2PokemonCount: "15",
-            gen3PokemonCount: "18",
-            gen4PokemonCount: "17",
-            gen5PokemonCount: "18",
-            gen6PokemonCount: "8",
-            gen7PokemonCount: "12",
-            gen8PokemonCount: "8",
-            gen9PokemonCount: "14",
-        },
-         statAverages: {
-            hp: "76.0",
-            attack: "74.0",
-            defense: "61.2",
-            spAttack: "59.2",
-            spDefense: "64.8",
-            speed: "71.1",
-         },
-         attackTypemap: {
-            noEffect: "Ghost", 
-            notVeryEffective: "Rock, Steel",
-            superEffective: "None",
-         },
-         defenceTypemap: {
-            noEffect: "Ghost", 
-            notVeryEffective: "None",
-            superEffective: "Fighting",
-         },
-         genOneAttackTypemap: {
-             noEffect: "Ghost",
-             notVeryEffective: "Rock",
-             superEffective: "None",
-         },
-         genOneDefenseTypemap: {
-             noEffect: "Ghost", 
-             notVeryEffective: "None",
-             superEffective: "Fighting",
-         },
-         genTwoFiveAttackTypemap: {
-             noEffect: "Ghost",
-             notVeryEffective: "Rock, Steel",
-             superEffective: "None",
-         },
-         genTwoFiveDefenseTypemap: {
-             noEffect: "Ghost",
-             notVeryEffective: "None",
-             superEffective: "Fighting",
-         }
-     },
-     {
-        name: "Fire",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "47",
-            totalPokemonCount: "95",
-            singleTypePokemonCount: "37",
-            dualTypePokemonCount: "58",
-            gen1PokemonCount: "12",
-            gen2PokemonCount: "10",
-            gen3PokemonCount: "6",
-            gen4PokemonCount: "5",
-            gen5PokemonCount: "15",
-            gen6PokemonCount: "8",
-            gen7PokemonCount: "9",
-            gen8PokemonCount: "7",
-            gen9PokemonCount: "9",
-        },
-        statAverages: {
-            hp: "70.9",
-            attack: "84.1",
-            defense: "70.8",
-            spAttack: "89.3",
-            spDefense: "72.9",
-            speed: "75.5",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Water, Rock, Dragon",
-            superEffective: "Grass, Ice, Bug, Steel",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Grass, Ice, Bug, Steel, Fairy",
-            superEffective: "Water, Ground, Rock",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Water, Rock, Dragon",
-            superEffective: "Grass, Ice, Bug",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Grass, Bug",
-            superEffective: "Water, Ground, Rock",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fire, Water, Rock, Dragon",
-           superEffective: "Grass, Ice, Bug, Steel",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fire, Grass, Ice, Bug, Steel",
-           superEffective: "Water, Ground, Rock",
-       }
-     },
-     {
-        name: "Water",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "52",
-            totalPokemonCount: "172",
-            singleTypePokemonCount: "81",
-            dualTypePokemonCount: "91",
-            gen1PokemonCount: "32",
-            gen2PokemonCount: "18",
-            gen3PokemonCount: "28",
-            gen4PokemonCount: "14",
-            gen5PokemonCount: "17",
-            gen6PokemonCount: "9",
-            gen7PokemonCount: "14",
-            gen8PokemonCount: "11",
-            gen9PokemonCount: "12",
-        },
-        statAverages: {
-            hp: "70.7",
-            attack: "75.6",
-            defense: "74.9",
-            spAttack: "75",
-            spDefense: "71.6",
-            speed: "66.2",
-        },
-        attackTypemap: {
-            noEffect: "None", 
-            notVeryEffective: "Water, Grass, Dragon",
-            superEffective: "Fire, Ground, Rock",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Water, Ice, Steel",
-            superEffective: "Electric Grass",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Water, Grass, Dragon",
-            superEffective: "Fire, Ground, Rock",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Water, Ice",
-            superEffective: "Electric, Grass",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Water, Grass, Dragon",
-           superEffective: "Fire, Ground, Rock",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fire, Water, Ice, Steel",
-           superEffective: "Electric, Grass",
-       }
-     },
-     {
-        name: "Electric",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "47",
-            totalPokemonCount: "86",
-            singleTypePokemonCount: "37",
-            dualTypePokemonCount: "49",
-            gen1PokemonCount: "9",
-            gen2PokemonCount: "8",
-            gen3PokemonCount: "4",
-            gen4PokemonCount: "7",
-            gen5PokemonCount: "11",
-            gen6PokemonCount: "3",
-            gen7PokemonCount: "6",
-            gen8PokemonCount: "9",
-            gen9PokemonCount: "11",
-        },
-        statAverages: {
-            hp: "64",
-            attack: "74.8",
-            defense: "68.9",
-            spAttack: "86.7",
-            spDefense: "70.8",
-            speed: "83.2",
-        },
-        attackTypemap: {
-            noEffect: "Ground",
-            notVeryEffective: "Electric, Grass, Dragon",
-            superEffective: "Water, Flying",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Electric, Flying, Steel",
-            superEffective: "Ground",
-        },
-        genOneAttackTypemap: {
-            noEffect: "Ground",
-            notVeryEffective: "Electric, Grass, Dragon",
-            superEffective: "Water, Flying",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Electric, Flying",
-            superEffective: "Ground",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "Ground",
-           notVeryEffective: "Electric, Grass, Dragon",
-           superEffective: "Water, Flying",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Electric, Flying, Steel",
-           superEffective: "Ground",
-       }
-     },
-     {
-        name: "Grass",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "59",
-            totalPokemonCount: "137",
-            singleTypePokemonCount: "46",
-            dualTypePokemonCount: "91",
-            gen1PokemonCount: "14",
-            gen2PokemonCount: "10",
-            gen3PokemonCount: "18",
-            gen4PokemonCount: "14",
-            gen5PokemonCount: "20",
-            gen6PokemonCount: "9",
-            gen7PokemonCount: "13",
-            gen8PokemonCount: "10",
-            gen9PokemonCount: "14",
-        },
-        statAverages: {
-            hp: "66.4",
-            attack: "75.5",
-            defense: "74",
-            spAttack: "71.9",
-            spDefense: "71.6",
-            speed: "61.1",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Grass, Poison, Flying, Bug, Dragon, Steel",
-            superEffective: "Water, Ground, Rock",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Water, Electric, Grass, Ground",
-            superEffective: "Fire, Ice, Poison, Flying, Bug",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Grass, Poison, Flying, Bug, Dragon",
-            superEffective: "Water, Ground, Rock",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Water, Electric, Grass, Ground",
-            superEffective: "Fire, Ice, Poison, Flying, Bug",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fire, Grass, Poison, Flying, Dragon, Steel",
-           superEffective: "Water, Ground, Rock",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Water, Electric, Grass, Ground",
-           superEffective: "Fire, Ice, Poison, Flying, Bug",
-       }
-     },
-     {
-        name: "Ice",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "33",
-            totalPokemonCount: "65",
-            singleTypePokemonCount: "22",
-            dualTypePokemonCount: "43",
-            gen1PokemonCount: "5",
-            gen2PokemonCount: "5",
-            gen3PokemonCount: "6",
-            gen4PokemonCount: "6",
-            gen5PokemonCount: "7",
-            gen6PokemonCount: "4",
-            gen7PokemonCount: "1",
-            gen8PokemonCount: "7",
-            gen9PokemonCount: "7",
-        },
-        statAverages: {
-            hp: "78.2",
-            attack: "86.9",
-            defense: "79.8",
-            spAttack: "75.6",
-            spDefense: "77.1",
-            speed: "67.3",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Water, Ice, Steel",
-            superEffective: "Grass, Ground, Flying, Dragon",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Ice",
-            superEffective: "Fire, Fighting, Rock, Steel",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Water, Ice",
-            superEffective: "Grass, Ground, Flying, Dragon",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Ice",
-            superEffective: "Fire, Fighting, Rock",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fire, Water, Ice, Steel",
-           superEffective: "Grass, Ground, Flying, Dragon",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Ice",
-           superEffective: "Fire, Fighting, Rock, Steel",
-       }
-     },
-     {
-        name: "Fighting",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "56",
-            totalPokemonCount: "91",
-            singleTypePokemonCount: "30",
-            dualTypePokemonCount: "61",
-            gen1PokemonCount: "8",
-            gen2PokemonCount: "3",
-            gen3PokemonCount: "7",
-            gen4PokemonCount: "7",
-            gen5PokemonCount: "15",
-            gen6PokemonCount: "4",
-            gen7PokemonCount: "10",
-            gen8PokemonCount: "8",
-            gen9PokemonCount: "10",
-        },
-        statAverages: {
-            hp: "75.9",
-            attack: "107.2",
-            defense: "77.3",
-            spAttack: "66.6",
-            spDefense: "73.2",
-            speed: "78.9",
-        },
-        attackTypemap: {
-            noEffect: "Ghost",
-            notVeryEffective: "Poison, Flying, Psychic, Bug, Fairy",
-            superEffective: "Normal, Ice, Rock, Dark, Steel",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Bug, Rock, Dark",
-            superEffective: "Flying, Psychic, Fairy",
-        },
-        genOneAttackTypemap: {
-            noEffect: "Ghost",
-            notVeryEffective: "Poison, Flying, Psychic, Bug",
-            superEffective: "Normal, Ice, Rock",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Bug, Rock",
-            superEffective: "Flying, Psychic",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "Ghost",
-           notVeryEffective: "Poison, Flying, Poison, Bug",
-           superEffective: "Normal, Ice, Rock, Dark, Steel",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Bug, Rock, Dark",
-           superEffective: "Flying, Psychic",
-       }
-     },
-     {
-        name: "Poison",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "35",
-            totalPokemonCount: "92",
-            singleTypePokemonCount: "16",
-            dualTypePokemonCount: "76",
-            gen1PokemonCount: "33",
-            gen2PokemonCount: "4",
-            gen3PokemonCount: "5",
-            gen4PokemonCount: "8",
-            gen5PokemonCount: "7",
-            gen6PokemonCount: "2",
-            gen7PokemonCount: "6",
-            gen8PokemonCount: "5",
-            gen9PokemonCount: "8",
-        },
-        statAverages: {
-            hp: "68.1",
-            attack: "73.9",
-            defense: "68.7",
-            spAttack: "71.8",
-            spDefense: "71.7",
-            speed: "68.3",
-        },
-        attackTypemap: {
-            noEffect: "Steel",
-            notVeryEffective: "Poison, Ground, Rock, Ghost",
-            superEffective: "Grass, Fairy",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Grass, Fighting, Poison, Bug, Fairy",
-            superEffective: "Ground, Psychic",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Poison, Ground, Rock, Ghost",
-            superEffective: "Grass, Bug",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Grass, Fighting, Poison",
-            superEffective: "Ground, Psychic, Bug",
-        },
-        genTwoFiveAttackTypemap: {
-            noEffect: "Steel",
-            notVeryEffective: "Poison, Ground, Rock, Ghost",
-            superEffective: "Grass",
-       },
-       genTwoFiveDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Grass, Fighting, Poison, Bug",
-            superEffective: "Ground, Psychic",
-       }
-     },
-     {
-        name: "Ground",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "31",
-            totalPokemonCount: "89",
-            singleTypePokemonCount: "17",
-            dualTypePokemonCount: "72",
-            gen1PokemonCount: "14",
-            gen2PokemonCount: "10",
-            gen3PokemonCount: "13",
-            gen4PokemonCount: "10",
-            gen5PokemonCount: "11",
-            gen6PokemonCount: "2",
-            gen7PokemonCount: "4",
-            gen8PokemonCount: "4",
-            gen9PokemonCount: "7",
-        },
-        statAverages: {
-            hp: "75.9",
-            attack: "92.3",
-            defense: "88.3",
-            spAttack: "60.5",
-            spDefense: "66.1",
-            speed: "58.6",
-        },
-        attackTypemap: {
-            noEffect: "Flying",
-            notVeryEffective: "Grass, Bug",
-            superEffective: "Fire, Electric, Poison, Rock, Steel",
-        },
-        defenceTypemap: {
-            noEffect: "Electric",
-            notVeryEffective: "Poison, Rock",
-            superEffective: "Water, Grass, Ice",
-        },
-        genOneAttackTypemap: {
-            noEffect: "Flying",
-            notVeryEffective: "Grass, Bug",
-            superEffective: "Fire, Electric, Poison, Rock",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "Electric",
-            notVeryEffective: "Poison, Rock",
-            superEffective: "Water, Grass, Ice",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "Flying",
-           notVeryEffective: "Grass, Bug",
-           superEffective: "Fire, Electric, Poison, Rock, Steel",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "Electric",
-           notVeryEffective: "Poison, Rock",
-           superEffective: "Water, Grass, Ice",
-       }
-     },
-     {
-        name: "Flying",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "31",
-            totalPokemonCount: "132",
-            singleTypePokemonCount: "4",
-            dualTypePokemonCount: "128",
-            gen1PokemonCount: "19",
-            gen2PokemonCount: "19",
-            gen3PokemonCount: "12",
-            gen4PokemonCount: "14",
-            gen5PokemonCount: "18",
-            gen6PokemonCount: "8",
-            gen7PokemonCount: "8",
-            gen8PokemonCount: "5",
-            gen9PokemonCount: "7",
-        },
-        statAverages: {
-            hp: "72.1",
-            attack: "81.1",
-            defense: "69",
-            spAttack: "78.1",
-            spDefense: "71.9",
-            speed: "85",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Electric, Rock, Steel",
-            superEffective: "Grass, Fighting, Bug",
-        },
-        defenceTypemap: {
-            noEffect: "Ground",
-            notVeryEffective: "Grass, Fighting, Bug",
-            superEffective: "Electric, Ice, Rock",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Electric, Rock",
-            superEffective: "Grass, Fighting, Bug",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "Ground",
-            notVeryEffective: "Grass, Fighting, Bug",
-            superEffective: "Electric, Ice, Rock",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Electric, Rock, Steel",
-           superEffective: "Grass, Fighting, Bug",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "Ground",
-           notVeryEffective: "Grass, Fighting, Bug",
-           superEffective: "Electric, Ice, Rock",
-       }
-     },
-     {
-        name: "Psychic",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "77",
-            totalPokemonCount: "130",
-            singleTypePokemonCount: "47",
-            dualTypePokemonCount: "83",
-            gen1PokemonCount: "14",
-            gen2PokemonCount: "11",
-            gen3PokemonCount: "21",
-            gen4PokemonCount: "10",
-            gen5PokemonCount: "15",
-            gen6PokemonCount: "6",
-            gen7PokemonCount: "8",
-            gen8PokemonCount: "9",
-            gen9PokemonCount: "7",
-        },
-        statAverages: {
-            hp: "74",
-            attack: "75.8",
-            defense: "76.7",
-            spAttack: "95.5",
-            spDefense: "88",
-            speed: "76.3",
-        },
-        attackTypemap: {
-            noEffect: "Dark",
-            notVeryEffective: "Psychic, Steel",
-            superEffective: "Fighting, Poison",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fighting, Psychic",
-            superEffective: "Bug, Ghost, Dark",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Psychic",
-            superEffective: "Fighting, Poison",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "Ghost",
-            notVeryEffective: "Fighting, Psychic",
-            superEffective: "Bug",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "Dark",
-           notVeryEffective: "Psychic, Steel",
-           superEffective: "Fighting, Poison",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fighting, Psychic",
-           superEffective: "Bug, Ghost, Dark",
-       }
-     },
-     {
-        name: "Bug",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "34",
-            totalPokemonCount: "100",
-            singleTypePokemonCount: "25",
-            dualTypePokemonCount: "75",
-            gen1PokemonCount: "12",
-            gen2PokemonCount: "10",
-            gen3PokemonCount: "14",
-            gen4PokemonCount: "9",
-            gen5PokemonCount: "18",
-            gen6PokemonCount: "4",
-            gen7PokemonCount: "11",
-            gen8PokemonCount: "8",
-            gen9PokemonCount: "7",
-        },
-        statAverages: {
-            hp: "56.8",
-            attack: "71",
-            defense: "70.9",
-            spAttack: "56",
-            spDefense: "65.4",
-            speed: "61.6",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Fighting, Poison, Flying, Ghost, Steel, Fairy",
-            superEffective: "Grass, Psychic, Dark",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Grass, Fighting, Ground",
-            superEffective: "Fire, Flying, Rock",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Fighting, Flying, Ghost",
-            superEffective: "Grass, Poison, Psychic",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Grass, Fighting, Ground",
-            superEffective: "Fire, Poison, Flying, Rock",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fire, Fighting, Poison, Flying, Ghost, Steel",
-           superEffective: "Grass, Psychic, Dark",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Grass, Fighting, Ground",
-           superEffective: "Fire, Flying, Rock",
-       }
-     },
-     {
-        name: "Rock",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "25",
-            totalPokemonCount: "86",
-            singleTypePokemonCount: "20",
-            dualTypePokemonCount: "66",
-            gen1PokemonCount: "11",
-            gen2PokemonCount: "7",
-            gen3PokemonCount: "12",
-            gen4PokemonCount: "7",
-            gen5PokemonCount: "10",
-            gen6PokemonCount: "8",
-            gen7PokemonCount: "5",
-            gen8PokemonCount: "6",
-            gen9PokemonCount: "7",
-        },
-        statAverages: {
-            hp: "68.5",
-            attack: "91.9",
-            defense: "103.3",
-            spAttack: "59.4",
-            spDefense: "71.4",
-            speed: "54.5",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fighting, Ground, Steel",
-            superEffective: "Fire, Ice, Flying, Bug",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Normal, Fire, Poison, Flying",
-            superEffective: "Water, Grass, Fighting, Ground, Steel",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fighting, Flying",
-            superEffective: "Fire, Ice, Flying, Bug",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Normal, Fire, Poison, Flying",
-            superEffective: "Water, Grass, Fighting, Ground",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fighting, Ground, Steel",
-           superEffective: "Fire, Ice, Flying, Bug",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Normal, Fire, Poison, Flying",
-           superEffective: "Water, Grass, Fighting, Ground, Steel",
-       }
-     },
-     {
-        name: "Ghost",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "34",
-            totalPokemonCount: "84",
-            singleTypePokemonCount: "19",
-            dualTypePokemonCount: "65",
-            gen1PokemonCount: "3",
-            gen2PokemonCount: "1",
-            gen3PokemonCount: "6",
-            gen4PokemonCount: "8",
-            gen5PokemonCount: "9",
-            gen6PokemonCount: "8",
-            gen7PokemonCount: "8",
-            gen8PokemonCount: "9",
-            gen9PokemonCount: "10",
-        },
-        statAverages: {
-            hp: "66.4",
-            attack: "80.6",
-            defense: "79.3",
-            spAttack: "84.4",
-            spDefense: "78.6",
-            speed: "67",
-        },
-        attackTypemap: {
-            noEffect: "Normal",
-            notVeryEffective: "Dark",
-            superEffective: "Psychic, Ghost",
-        },
-        defenceTypemap: {
-            noEffect: "Normal, Fighting",
-            notVeryEffective: "Poison, Bug",
-            superEffective: "Ghost, Dark",
-        },
-        genOneAttackTypemap: {
-            noEffect: "Normal, Psychic",
-            notVeryEffective: "None",
-            superEffective: "Ghost",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "Normal, Fighting",
-            notVeryEffective: "Poison, Bug",
-            superEffective: "Ghost",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "Normal",
-           notVeryEffective: "Dark, Steel",
-           superEffective: "Psychic, Ghost",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "Normal, Fighting",
-           notVeryEffective: "Poison, Bug",
-           superEffective: "Ghost, Dark",
-       }
-     },
-     {
-        name: "Dragon",
-        genAdded: "Gen 1",
-        counts: {
-            moveCount: "29",
-            totalPokemonCount: "85",
-            singleTypePokemonCount: "13",
-            dualTypePokemonCount: "72",
-            gen1PokemonCount: "3",
-            gen2PokemonCount: "1",
-            gen3PokemonCount: "9",
-            gen4PokemonCount: "6",
-            gen5PokemonCount: "10",
-            gen6PokemonCount: "9",
-            gen7PokemonCount: "7",
-            gen8PokemonCount: "11",
-            gen9PokemonCount: "8",
-        },
-        statAverages: {
-            hp: "88.2",
-            attack: "100.9",
-            defense: "88.7",
-            spAttack: "98",
-            spDefense: "86.4",
-            speed: "81.1",
-        },
-        attackTypemap: {
-            noEffect: "Fairy",
-            notVeryEffective: "Steel",
-            superEffective: "Dragon",
-        },
-        defenceTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Water, Electric, Grass",
-            superEffective: "Ice, Dragon, Fairy",
-        },
-        genOneAttackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "None",
-            superEffective: "Dragon",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Water, Electric, Grass",
-            superEffective: "Ice, Dragon",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Steel",
-           superEffective: "Dragon",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fire, Water, Electric, Grass",
-           superEffective: "Ice, Dragon",
-       }
-     },
-     {
-        name: "Dark",
-        genAdded: "Gen 2",
-        counts: {
-            moveCount: "53",
-            totalPokemonCount: "89",
-            singleTypePokemonCount: "16",
-            dualTypePokemonCount: "73",
-            gen1PokemonCount: "0",
-            gen2PokemonCount: "6",
-            gen3PokemonCount: "10",
-            gen4PokemonCount: "7",
-            gen5PokemonCount: "16",
-            gen6PokemonCount: "5",
-            gen7PokemonCount: "2",
-            gen8PokemonCount: "10",
-            gen9PokemonCount: "15",
-        },
-        statAverages: {
-            hp: "72.9",
-            attack: "92.7",
-            defense: "69.1",
-            spAttack: "74.6",
-            spDefense: "68.6",
-            speed: "76.9",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fighting, Dark, Fairy",
-            superEffective: "Psychic, Ghost",
-        },
-        defenceTypemap: {
-            noEffect: "Psychic",
-            notVeryEffective: "Ghost, Dark",
-            superEffective: "Fighting, Bug, Fairy",
-        },
-        genOneAttackTypemap: {
-            noEffect: "Didn't Exist", 
-            notVeryEffective: "Didn't Exist",
-            superEffective: "Didn't Exist",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "Didn't Exist",
-            notVeryEffective: "Didn't Exist",
-            superEffective: "Didn't Exist",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fighting, Dark, Steel",
-           superEffective: "Psychic, Ghost",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "Psychic",
-           notVeryEffective: "Ghost, Dark",
-           superEffective: "Fighting, Bug",
-       }
-     },
-     {
-        name: "Steel",
-        genAdded: "Gen 2",
-        counts: {
-            moveCount: "37",
-            totalPokemonCount: "83",
-            singleTypePokemonCount: "12",
-            dualTypePokemonCount: "71",
-            gen1PokemonCount: "0",
-            gen2PokemonCount: "4",
-            gen3PokemonCount: "9",
-            gen4PokemonCount: "10",
-            gen5PokemonCount: "12",
-            gen6PokemonCount: "5",
-            gen7PokemonCount: "8",
-            gen8PokemonCount: "6",
-            gen9PokemonCount: "9",
-        },
-        statAverages: {
-            hp: "70.1",
-            attack: "95.4",
-            defense: "108.8",
-            spAttack: "71.1",
-            spDefense: "81.2",
-            speed: "62.3",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Water, Electric, Steel",
-            superEffective: "Ice, Rock, Fairy",
-        },
-        defenceTypemap: {
-            noEffect: "Poison",
-            notVeryEffective: "Normal, Grass, Ice, Flying, Psychic, Bug, Rock, Dragon, Fairy",
-            superEffective: "Fire, Fighting, Ground",
-        },
-        genOneAttackTypemap: {
-            noEffect: "Didn't Exist",
-            notVeryEffective: "Didn't Exist",
-            superEffective: "Didn't Exist",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "Didn't Exist",
-            notVeryEffective: "Didn't Exist",
-            superEffective: "Didn't Exist",
-        },
-        genTwoFiveAttackTypemap: {
-           noEffect: "None",
-           notVeryEffective: "Fire, Water, Electric, Steel",
-           superEffective: "Ice, Rock",
-       },
-       genTwoFiveDefenseTypemap: {
-           noEffect: "Poison",
-           notVeryEffective: "Normal, Grass, Ice, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel",
-           superEffective: "Fire, Fighting, Ground",
-       }
-     },
-     {
-        name: "Fairy",
-        genAdded: "Gen 6",
-        counts: {
-            moveCount: "33",
-            totalPokemonCount: "73",
-            singleTypePokemonCount: "21",
-            dualTypePokemonCount: "52",
-            gen1PokemonCount: "0",
-            gen2PokemonCount: "0",
-            gen3PokemonCount: "0",
-            gen4PokemonCount: "0",
-            gen5PokemonCount: "0",
-            gen6PokemonCount: "35 (Includes retyped pokemon 13 without)",
-            gen7PokemonCount: "12",
-            gen8PokemonCount: "8",
-            gen9PokemonCount: "8",
-        },
-        statAverages: {
-            hp: "67.6",
-            attack: "70.2",
-            defense: "74.2",
-            spAttack: "82.4",
-            spDefense: "85.9",
-            speed: "64.8",
-        },
-        attackTypemap: {
-            noEffect: "None",
-            notVeryEffective: "Fire, Poison, Steel",
-            superEffective: "Fighting, Dragon, Dark",
-        },
-        defenceTypemap: {
-            noEffect: "Dragon",
-            notVeryEffective: "Fighting, Bug, Dark",
-            superEffective: "Poison, Steel",
-        },
-        genOneAttackTypemap: {
-            noEffect: "Didn't Exist",
-            notVeryEffective: "Didn't Exist",
-            superEffective: "Didn't Exist",
-        },
-        genOneDefenseTypemap: {
-            noEffect: "Didn't Exist",
-            notVeryEffective: "Didn't Exist",
-            superEffective: "Didn't Exist",
-        },
-        genTwoFiveAttackTypemap: {
-            noEffect: "Didn't Exist",
-            notVeryEffective: "Didn't Exist",
-            superEffective: "Didn't Exist",
-       },
-       genTwoFiveDefenseTypemap: {
-            noEffect: "Didn't Exist",
-            notVeryEffective: "Didn't Exist",
-            superEffective: "Didn't Exist",
-       }
-     }
+     // NORMAL
+    {
+        name: {
+            en: "Normal",
+            ja: "ノーマル",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/5/57/TeraGem_Normal.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/c/cb/Normal_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/9/9a/NormalIC_Tera.png",
+        },
+        counters: {
+            moves: 200,
+            pokemon: {
+                total: 149,
+                singleType: 79,
+                dualType: 70,
+                gen1: 22,
+                gen2: 15,
+                gen3: 18,
+                gen4: 17,
+                gen5: 18,
+                gen6: 8,
+                gen7: 12,
+                gen8: 8,
+                gen9: 14,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 75.87,
+                    attack: 73.76,
+                    defense: 60.81,
+                    spAttack: 58.50,
+                    spDefense: 64.70,
+                    speed: 71.20,
+                    total: 404.84,
+                },
+                fullyEvolved: {
+                    hp: 88.12,
+                    attack: 88.96,
+                    defense: 74.29,
+                    spAttack: 71.64,
+                    spDefense: 79.13,
+                    speed: 84.13,
+                    total: 486.27,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "Rock",
+                    superEffective: "None",
+                },
+                defence: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "None",
+                    superEffective: "Fighting",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "Rock, Steel",
+                    superEffective: "None",
+                },
+                defence: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "None",
+                    superEffective: "Fighting",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "Rock, Steel",
+                    superEffective: "None",
+                },
+                defence: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "None",
+                    superEffective: "Fighting",
+                },
+            },
+        },
+    },
+    // FIRE
+    {
+        name: {
+            en: "Fire",
+            ja: "ほのおタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/9/94/TeraGem_Fire.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/4/48/Fire_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/a/a2/FireIC_SV.png",
+        },
+        counters: {
+            moves: 47,
+            pokemon: {
+                total: 95,
+                singleType: 37,
+                dualType: 58,
+                gen1: 12,
+                gen2: 10,
+                gen3: 6,
+                gen4: 5,
+                gen5: 15,
+                gen6: 8,
+                gen7: 9,
+                gen8: 7,
+                gen9: 9,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 68.80,
+                    attack: 82.55,
+                    defense: 68.5,
+                    spAttack: 86.83,
+                    spDefense: 70.85,
+                    speed: 73.80,
+                    total: 451.33,
+                },
+                fullyEvolved: {
+                    hp: 81.42,
+                    attack: 98.71,
+                    defense: 84.85,
+                    spAttack: 105.48,
+                    spDefense: 85.65,
+                    speed: 83.81,
+                    total: 539.92,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Rock. Dragon",
+                    superEffective: "Grass, Ice, Bug",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Grass, Bug",
+                    superEffective: "Water, Ground, Rock",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Rock, Dragon",
+                    superEffective: "Grass, Ice, Bug, Steel",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Grass, Ice, Bug, Steel",
+                    superEffective: "Water, Ground, Rock",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Rock, Dragon",
+                    superEffective: "Grass, Ice, Bug, Steel",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Grass, Ice, Bug, Steel, Fairy",
+                    superEffective: "Water, Ground, Rock",
+                },
+            },
+        },
+    },
+    // WATER
+    {
+        name: {
+            en: "Water",
+            ja: "みずタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/9/97/TeraGem_Water.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/5/5e/Water_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/d/de/WaterIC_SV.png",
+        },
+        counters: {
+            moves: 52,
+            pokemon: {
+                total: 172,
+                singleType: 81,
+                dualType: 91,
+                gen1: 32,
+                gen2: 18,
+                gen3: 28,
+                gen4: 14,
+                gen5: 17,
+                gen6: 9,
+                gen7: 14,
+                gen8: 11,
+                gen9: 12,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 69.64,
+                    attack: 74.72,
+                    defense: 74.89,
+                    spAttack: 73.43,
+                    spDefense: 71.39,
+                    speed: 64.90,
+                    total: 426.99,
+                },
+                fullyEvolved: {
+                    hp: 83.85,
+                    attack: 90.90,
+                    defense: 90.10,
+                    spAttack: 88.67,
+                    spDefense: 87.06,
+                    speed: 73.17,
+                    total: 513.75,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Water, Grass, Dragon",
+                    superEffective: "Water, Ground, Rock",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Ice",
+                    superEffective: "Electric, Grass",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Water, Grass, Dragon",
+                    superEffective: "Fire, Ground, Rock",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Ice, Steel",
+                    superEffective: "Electric, Grass",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Water, Grass, Dragon",
+                    superEffective: "Fire, Ground, Rock",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Ice, Steel",
+                    superEffective: "Electric, Grass",
+                },
+            },
+        },
+    },
+    // ELECTRIC
+    {
+        name: {
+            en: "Electric",
+            ja: "でんきタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/d/d4/TeraGem_Electric.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/7/75/Electric_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/7/77/ElectricIC_SV.png",
+        },
+        counters: {
+            moves: 47,
+            pokemon: {
+                total: 86,
+                singleType: 37,
+                dualType: 49,
+                gen1: 9,
+                gen2: 8,
+                gen3: 4,
+                gen4: 7,
+                gen5: 11,
+                gen6: 3,
+                gen7: 6,
+                gen8: 9,
+                gen9: 11,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 64.06,
+                    attack: 74.84,
+                    defense: 69.56,
+                    spAttack: 86.93,
+                    spDefense: 71.37,
+                    speed: 80.21,
+                    total: 446.97,
+                },
+                fullyEvolved: {
+                    hp: 72.26,
+                    attack: 83.48,
+                    defense: 77.80,
+                    spAttack: 100.37,
+                    spDefense: 82.11,
+                    speed: 90.11,
+                    total: 506.13,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "Ground",
+                    notVeryEffective: "Electric, Grass, Dragon",
+                    superEffective: "Water, Flying",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Electric, Flying",
+                    superEffective: "Ground",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "Ground",
+                    notVeryEffective: "Electric, Grass, Dragon",
+                    superEffective: "Water, Flying",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Electric, Flying, Steel",
+                    superEffective: "Ground",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "Ground",
+                    notVeryEffective: "Electric, Grass, Dragon",
+                    superEffective: "Water, Flying",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Electric, Flying, Steel",
+                    superEffective: "Ground",
+                },
+            },
+        },
+    },
+    // GRASS
+    {
+        name: {
+            en: "Grass",
+            ja: "くさタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/c/cd/TeraGem_Grass.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/1/1b/Grass_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/7/7b/GrassIC_SV.png",
+        },
+        counters: {
+            moves: 59,
+            pokemon: {
+                total: 137,
+                singleType: 46,
+                dualType: 91,
+                gen1: 14,
+                gen2: 10,
+                gen3: 18,
+                gen4: 14,
+                gen5: 20,
+                gen6: 9,
+                gen7: 13,
+                gen8: 10,
+                gen9: 14,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 66.22,
+                    attack: 75.53,
+                    defense: 74.10,
+                    spAttack: 71.90,
+                    spDefense: 71.38,
+                    speed: 59.40,
+                    total: 418.53,
+                },
+                fullyEvolved: {
+                    hp: 79.31,
+                    attack: 94.54,
+                    defense: 88.85,
+                    spAttack: 87.80,
+                    spDefense: 84.97,
+                    speed: 71.75,
+                    total: 507.22,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Grass, Poison, Flying, Bug, Dragon",
+                    superEffective: "Water, Ground, Rock",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Water, Electric, Grass, Ground",
+                    superEffective: "Fire, Ice, Poison, Flying, Bug",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Gras, Poison, Flying, Dragon, Steel",
+                    superEffective: "Water, Ground, Rock",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Water, Electric, Grass, Ground",
+                    superEffective: "Fire, Ice, Poison, Flying, Bug",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Grass, Poison, Flying, Bug, Dragon, Steel",
+                    superEffective: "Water, Ground, Rock",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Water, Electric, Grass, Ground",
+                    superEffective: "Fire, Ice, Poison, Flying, Bug",
+                },
+            },
+        },
+    },
+    // ICE
+    {
+        name: {
+            en: "Ice",
+            ja: "こおりタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/a/a3/TeraGem_Ice.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/7/70/Ice_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/1/13/IceIC_SV.png",
+        },
+        counters: {
+            moves: 33,
+            pokemon: {
+                total: 65,
+                singleType: 22,
+                dualType: 43,
+                gen1: 5,
+                gen2: 5,
+                gen3: 6,
+                gen4: 6,
+                gen5: 7,
+                gen6: 4,
+                gen7: 1,
+                gen8: 7,
+                gen9: 7,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 77.11,
+                    attack: 83.69,
+                    defense: 75.55,
+                    spAttack: 76.38,
+                    spDefense: 76.27,
+                    speed: 68.82,
+                    total: 457.82,
+                },
+                fullyEvolved: {
+                    hp: 86.73,
+                    attack: 94.78,
+                    defense: 85.95,
+                    spAttack: 87.43,
+                    spDefense: 86.41,
+                    speed: 77.11,
+                    total: 518.41,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Water, Ice",
+                    superEffective: "Grass, Ground, Flying, Dragon",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Ice",
+                    superEffective: "Fire, Fighting, Rock",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Ice, Steel",
+                    superEffective: "Grass, Ground, Flying, Dragon",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Ice",
+                    superEffective: "Fire, Fighting, Rock, Steel",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Ice, Steel",
+                    superEffective: "Grass, Ground, Flying, Dragon",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Ice",
+                    superEffective: "Fire, Fighting, Rock, Steel",
+                },
+            },
+        },
+    },
+    // FIGHTING
+    {
+        name: {
+            en: "Fighting",
+            ja: "かくとうタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/3/3b/TeraGem_Fighting.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/6/68/Fighting_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/0/0f/FightingIC_SV.png",
+        },
+        counters: {
+            moves: 56,
+            pokemon: {
+                total: 91,
+                singleType: 30,
+                dualType: 61,
+                gen1: 8,
+                gen2: 3,
+                gen3: 7,
+                gen4: 7,
+                gen5: 15,
+                gen6: 4,
+                gen7: 10,
+                gen8: 8,
+                gen9: 1,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 75.64,
+                    attack: 107.31,
+                    defense: 77.5,
+                    spAttack: 66.14,
+                    spDefense: 72.25,
+                    speed: 77.08,
+                    total: 475.92,
+                },
+                fullyEvolved: {
+                    hp: 83.22,
+                    attack: 120.64,
+                    defense: 87.28,
+                    spAttack: 74.08,
+                    spDefense: 82.25,
+                    speed: 88.22,
+                    total: 535.70,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "Poison, Flying, Psychic, Bug",
+                    superEffective: "Normal, Ice, Rock",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Bug, Rock",
+                    superEffective: "Flying, Psychic",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "Poison, Flying, Poison, Bug",
+                    superEffective: "Normal, ice, Rock, Dark, Steel",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Bug, Rock, Dark",
+                    superEffective: "Flying, Psychic",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "Poison, Flying, Psychic, Bug, Fairy",
+                    superEffective: "Normal, Ice, Rock, Dark, Steel",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Bug, Rock, Dark",
+                    superEffective: "Flying, Psychic, Fairy",
+                },
+            },
+        },
+    },
+    // POISON
+    {
+        name: {
+            en: "Poison",
+            ja: "どくタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/1/16/TeraGem_Poison.png",
+            symbol: "https://bulbapedia.bulbagarden.net/wiki/File:Poison_icon_LA.png",
+            icon: "https://bulbapedia.bulbagarden.net/wiki/File:PoisonIC_SV.png",
+        },
+        counters: {
+            moves: 35,
+            pokemon: {
+                total: 92,
+                singleType: 16,
+                dualType: 76,
+                gen1: 33,
+                gen2: 4,
+                gen3: 5,
+                gen4: 8,
+                gen5: 7,
+                gen6: 2,
+                gen7: 6,
+                gen8: 5,
+                gen9: 8,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 67.55,
+                    attack: 71.86,
+                    defense: 67.96,
+                    spAttack: 71.45,
+                    spDefense: 70.92,
+                    speed: 66.26,
+                    total: 416,
+                },
+                fullyEvolved: {
+                    hp: 83.05,
+                    attack: 87.54,
+                    defense: 82.87,
+                    spAttack: 88.10,
+                    spDefense: 89.56,
+                    speed: 81.72,
+                    total: 512.84,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Poison, Ground, Rock, Ghost",
+                    superEffective: "Grass, Bug",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Grass, Fighting, Poison",
+                    superEffective: "Ground, Psychic, Bug",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "Steel",
+                    notVeryEffective: "Poison, Ground, Rock, Ghost",
+                    superEffective: "Grass",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Grass, Fighting, Poison, Bug",
+                    superEffective: "Ground, Psychic",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "Steel",
+                    notVeryEffective: "Poison, Ground, Rock, Ghost",
+                    superEffective: "Grass, Fairy",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Grass, Fighting, Poison, Bug, Fairy",
+                    superEffective: "Ground, Psychic",
+                },
+            },
+        },
+    },
+    // GROUND
+    {
+        name: {
+            en: "Ground",
+            ja: "じめんタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/8/8b/TeraGem_Ground.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/4/45/Ground_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/f/f8/GroundIC_SV.png",
+        },
+        counters: {
+            moves: 31,
+            pokemon: {
+                total: 89,
+                singleType: 17,
+                dualType: 72,
+                gen1: 14,
+                gen2: 10,
+                gen3: 13,
+                gen4: 10,
+                gen5: 11,
+                gen6: 2,
+                gen7: 4,
+                gen8: 4,
+                gen9: 7,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 75.23,
+                    attack: 91.64,
+                    defense: 86.53,
+                    spAttack: 59.86,
+                    spDefense: 65.04,
+                    speed: 57.83,
+                    total: 436.13,
+                },
+                fullyEvolved: {
+                    hp: 89.67,
+                    attack: 108.02,
+                    defense: 100.69,
+                    spAttack: 73.89,
+                    spDefense: 79.11,
+                    speed: 64.91,
+                    total: 516.29,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "Flying",
+                    notVeryEffective: "Grass, Bug",
+                    superEffective: "Fire, Electric, Poison, Rock",
+                },
+                defence: {
+                    noEffect: "Electric",
+                    notVeryEffective: "Poison, Rock",
+                    superEffective: "Water, Grass, Ice",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "Flying",
+                    notVeryEffective: "Grass, Bug",
+                    superEffective: "Fire, Electric, Poison, Rock, Steel",
+                },
+                defence: {
+                    noEffect: "Electric",
+                    notVeryEffective: "Poison, Rock",
+                    superEffective: "Water, Grass, Ice",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "Flying",
+                    notVeryEffective: "Grass, Bug",
+                    superEffective: "Fire, Electric, Poison, Rock, Steel",
+                },
+                defence: {
+                    noEffect: "Electric",
+                    notVeryEffective: "Poison, Rock",
+                    superEffective: "Water, Grass, Ice",
+                },
+            },
+        },
+    },
+    // FLYING
+    {
+        name: {
+            en: "Flying",
+            ja: "ひこうタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/5/5a/TeraGem_Flying.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/d/de/Flying_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/d/d7/FlyingIC_SV.png",
+        },
+        counters: {
+            moves: 31,
+            pokemon: {
+                total: 132,
+                singleType: 4,
+                dualType: 128,
+                gen1: 19,
+                gen2: 19,
+                gen3: 12,
+                gen4: 14,
+                gen5: 18,
+                gen6: 8,
+                gen7: 8,
+                gen8: 5,
+                gen9: 7,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 71.59,
+                    attack: 80.25,
+                    defense: 68.32,
+                    spAttack: 76.21,
+                    spDefense: 70.95,
+                    speed: 85.15,
+                    total: 452.47,
+                },
+                fullyEvolved: {
+                    hp: 80.90,
+                    attack: 91.91,
+                    defense: 78.35,
+                    spAttack: 91.18,
+                    spDefense: 81.05,
+                    speed: 94.56,
+                    total: 517.95,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Electric, Rock",
+                    superEffective: "Grass, Fighting, Bug",
+                },
+                defence: {
+                    noEffect: "Ground",
+                    notVeryEffective: "Grass, Fighting, Bug",
+                    superEffective: "Electric, Ice, Rock",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Electric, Rock, Steel",
+                    superEffective: "Grass, Fighting, Bug",
+                },
+                defence: {
+                    noEffect: "Ground",
+                    notVeryEffective: "Grass, Fighting, Bug",
+                    superEffective: "Electric, Ice, Rock",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Electric, Rock, Steel",
+                    superEffective: "Grass, Fighting, Bug",
+                },
+                defence: {
+                    noEffect: "Ground",
+                    notVeryEffective: "Grass, Fighting, Bug",
+                    superEffective: "Electric, Ice, Rock",
+                },
+            },
+        },
+    },
+    // PSYCHIC
+    {
+        name: {
+            en: "Psychic",
+            ja: "エスパータイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/c/c6/TeraGem_Psychic.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/4/45/Psychic_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/9/96/PsychicIC_SV.png",
+        },
+        counters: {
+            moves: 77,
+            pokemon: {
+                total: 130,
+                singleType: 47,
+                dualType: 83,
+                gen1: 14,
+                gen2: 11,
+                gen3: 21,
+                gen4: 10,
+                gen5: 15,
+                gen6: 6,
+                gen7: 8,
+                gen8: 9,
+                gen9: 7,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 71.13,
+                    attack: 73.39,
+                    defense: 74.45,
+                    spAttack: 93.07,
+                    spDefense: 86.34,
+                    speed: 74.62,
+                    total: 473,
+                },
+                fullyEvolved: {
+                    hp: 82.38,
+                    attack: 90.78,
+                    defense: 86.14,
+                    spAttack: 110.28,
+                    spDefense: 99.51,
+                    speed: 89.01,
+                    total: 558.1,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Psychic",
+                    superEffective: "Fighting, Poison",
+                },
+                defence: {
+                    noEffect: "Ghost",
+                    notVeryEffective: "Fighting, Psychic",
+                    superEffective: "Bug",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "Dark",
+                    notVeryEffective: "Psychic, Steel",
+                    superEffective: "Fighting, Poison",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fighting, Psychic",
+                    superEffective: "Bug, Ghost, Dark",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "Dark",
+                    notVeryEffective: "Psychic, Steel",
+                    superEffective: "Fighting, Poison",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fighting, Psychic",
+                    superEffective: "Bug, Ghost, Dark",
+                },
+            },
+        },
+    },
+    // BUG
+    {
+        name: {
+            en: "Bug",
+            ja: "むしタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/b/be/TeraGem_Bug.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/2/26/Bug_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/d/d1/BugIC_SV.png",
+        },
+        counters: {
+            moves: 34,
+            pokemon: {
+                total: 100,
+                singleType: 25,
+                dualType: 75,
+                gen1: 12,
+                gen2: 10,
+                gen3: 14,
+                gen4: 9,
+                gen5: 18,
+                gen6: 4,
+                gen7: 11,
+                gen8: 8,
+                gen9: 7,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 57.06,
+                    attack: 71.89,
+                    defense: 71.11,
+                    spAttack: 56.74,
+                    spDefense: 65.78,
+                    speed: 61.92,
+                    total: 384.50,
+                },
+                fullyEvolved: {
+                    hp: 67.69,
+                    attack: 90.59,
+                    defense: 83.98,
+                    spAttack: 72.49,
+                    spDefense: 81.73,
+                    speed: 75.24,
+                    total: 471.72,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Fighting, Flying, Ghost",
+                    superEffective: "Grass, Poison, Psychic",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Grass, Fighting, Ground",
+                    superEffective: "Fire, Poison, Flying, Rock",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Fighting, Poison, Flying, Ghost, Steel",
+                    superEffective: "Grass, Psychic, Dark",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Grass, Fighting, Ground",
+                    superEffective: "Fire, Flying, Rock",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Fighting, Poison, Flying, Ghost, Steel, Fairy",
+                    superEffective: "Grass, Psychic, Dark",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Flying, Rock",
+                    superEffective: "None",
+                },
+            },
+        },
+    },
+    // ROCK
+    {
+        name: {
+            en: "Rock",
+            ja: "いわタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/e/ea/TeraGem_Rock.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/8/85/Rock_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/3/32/RockIC_SV.png",
+        },
+        counters: {
+            moves: 25,
+            pokemon: {
+                total: 86,
+                singleType: 20,
+                dualType: 66,
+                gen1: 11,
+                gen2: 7,
+                gen3: 12,
+                gen4: 7,
+                gen5: 10,
+                gen6: 8,
+                gen7: 5,
+                gen8: 6,
+                gen9: 7,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 68.03,
+                    attack: 91.12,
+                    defense: 104.24,
+                    spAttack: 59.81,
+                    spDefense: 72.58,
+                    speed: 53.69,
+                    total: 449.47,
+                },
+                fullyEvolved: {
+                    hp: 77.84,
+                    attack: 101.75,
+                    defense: 114.70,
+                    spAttack: 70,
+                    spDefense: 98.34,
+                    speed: 63.27,
+                    total: 525.90,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fighting, Flying",
+                    superEffective: "Fire, Ice, Flying, Bug",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Normal, Fire, Poison, Flying",
+                    superEffective: "Water, Grass, Fighting, Ground",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fighting, Ground, Steel",
+                    superEffective: "Fire, Ice, Flying, Bug",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Normal, Fire, Poison, Flying",
+                    superEffective: "Water, Grass, Fighting, Ground, Steel",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fighting, Ground, Steel",
+                    superEffective: "Fire, Ice, Flying, Bug",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Normal, Fire, Poison, Flying",
+                    superEffective: "Water, Grass, Fighting, Ground, Steel",
+                },
+            },
+        },
+    },
+    // GHOST
+    {
+        name: {
+            en: "Ghost",
+            ja: "ゴーストタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/8/87/TeraGem_Ghost.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/b/b5/Ghost_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/2/2c/GhostIC_SV.png",
+        },
+        counters: {
+            moves: 34,
+            pokemon: {
+                total: 84,
+                singleType: 19,
+                dualType: 65,
+                gen1: 3,
+                gen2: 1,
+                gen3: 6,
+                gen4: 8,
+                gen5: 9,
+                gen6: 8,
+                gen7: 8,
+                gen8: 9,
+                gen9: 10,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 63.54,
+                    attack: 79.03,
+                    defense: 80.04,
+                    spAttack: 80.84,
+                    spDefense: 78.55,
+                    speed: 63.21,
+                    total: 445.21,
+                },
+                fullyEvolved: {
+                    hp: 73.46,
+                    attack: 92.44,
+                    defense: 88.49,
+                    spAttack: 94.66,
+                    spDefense: 90.80,
+                    speed: 73.80,
+                    total: 513.65,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "Normal, Psychic",
+                    notVeryEffective: "None",
+                    superEffective: "Ghost",
+                },
+                defence: {
+                    noEffect: "Normal, Fighting",
+                    notVeryEffective: "Poison, Bug",
+                    superEffective: "Ghost",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "Normal",
+                    notVeryEffective: "Dark, Steel",
+                    superEffective: "Psychic, Ghost",
+                },
+                defence: {
+                    noEffect: "Normal, Fighting",
+                    notVeryEffective: "Poison, Bug",
+                    superEffective: "Ghost, Dark",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "Normal",
+                    notVeryEffective: "Dark",
+                    superEffective: "Psychic, Ghost",
+                },
+                defence: {
+                    noEffect: "Normal, Fighting",
+                    notVeryEffective: "Poison, Bug",
+                    superEffective: "Ghost, Dark",
+                },
+            },
+        },
+    },
+    // DRAGON
+    {
+        name: {
+            en: "Dragon",
+            ja: "ドラゴンタイプ",
+        },
+        genAdded: 1,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/2/2c/TeraGem_Dragon.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/2/28/Dragon_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/7/7f/DragonIC_SV.png",
+        },
+        counters: {
+            moves: 29,
+            pokemon: {
+                total: 85,
+                singleType: 13,
+                dualType: 72,
+                gen1: 3,
+                gen2: 1,
+                gen3: 9,
+                gen4: 6,
+                gen5: 10,
+                gen6: 9,
+                gen7: 7,
+                gen8: 11,
+                gen9: 8,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 88.24,
+                    attack: 102.70,
+                    defense: 89.80,
+                    spAttack: 97.90,
+                    spDefense: 85.90,
+                    speed: 82.44,
+                    total: 546.98,
+                },
+                fullyEvolved: {
+                    hp: 101.84,
+                    attack: 114.43,
+                    defense: 101.59,
+                    spAttack: 116.33,
+                    spDefense: 98.65,
+                    speed: 92.20,
+                    total: 625.04,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "None",
+                    superEffective: "Dragon",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Electric, Grass",
+                    superEffective: "Ice, Dragon",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Steel",
+                    superEffective: "Dragon",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Electric, Grass",
+                    superEffective: "ice, Dragon",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "Fairy",
+                    notVeryEffective: "Steel",
+                    superEffective: "Dragon",
+                },
+                defence: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Electric, Grass",
+                    superEffective: "Ice, Dragon, Fairy",
+                },
+            },
+        },
+    },
+    // DARK
+    {
+        name: {
+            en: "Dark",
+            ja: "あくタイプ",
+        },
+        genAdded: 2,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/6/66/TeraGem_Dark.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/7/7f/Dark_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/3/30/DarkIC_SV.png",
+        },
+        counters: {
+            moves: 53,
+            pokemon: {
+                total: 89,
+                singleType: 16,
+                dualType: 73,
+                gen1: 0,
+                gen2: 6,
+                gen3: 10,
+                gen4: 7,
+                gen5: 16,
+                gen6: 5,
+                gen7: 2,
+                gen8: 10,
+                gen9: 15,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 72.59,
+                    attack: 92.25,
+                    defense: 68.24,
+                    spAttack: 74.32,
+                    spDefense: 68.25,
+                    speed: 76.14,
+                    total: 451.79,
+                },
+                fullyEvolved: {
+                    hp: 85.16,
+                    attack: 109.78,
+                    defense: 82.36,
+                    spAttack: 89.60,
+                    spDefense: 81.69,
+                    speed: 84.56,
+                    total: 533.15,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "Didn't Exist",
+                    notVeryEffective: "Didn't Exist",
+                    superEffective: "Didn't Exist",
+                },
+                defence: {
+                    noEffect: "Didn't Exist",
+                    notVeryEffective: "Didn't Exist",
+                    superEffective: "Didn't Exist",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fighting, Dark, Steel",
+                    superEffective: "Psychic, Ghost",
+                },
+                defence: {
+                    noEffect: "Psychic",
+                    notVeryEffective: "Ghost, Dark",
+                    superEffective: "Fighting, Bug",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fighting, Dark, Fairy",
+                    superEffective: "Psychic, Ghost",
+                },
+                defence: {
+                    noEffect: "Psychic",
+                    notVeryEffective: "Ghost, Dark",
+                    superEffective: "Fighting, Bug, Fairy",
+                },
+            },
+        },
+    },
+    // STEEL
+    {
+        name: {
+            en: "Steel",
+            ja: "はがねタイプ",
+        },
+        genAdded: 2,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/0/0a/TeraGem_Steel.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/f/f9/Steel_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/b/b8/SteelIC_SV.png",
+        },
+        counters: {
+            moves: 37,
+            pokemon: {
+                total: 83,
+                singleType: 12,
+                dualType: 71,
+                gen1: 0,
+                gen2: 4,
+                gen3: 9,
+                gen4: 10,
+                gen5: 12,
+                gen6: 5,
+                gen7: 8,
+                gen8: 6,
+                gen9: 9,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 68.32,
+                    attack: 96.70,
+                    defense: 110.28,
+                    spAttack: 70.11,
+                    spDefense: 79.01,
+                    speed: 60.44,
+                    total: 484.86,
+                },
+                fullyEvolved: {
+                    hp: 78.47,
+                    attack: 111.08,
+                    defense: 122.88,
+                    spAttack: 80.43,
+                    spDefense: 90.31,
+                    speed: 69.14,
+                    total: 552.31,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "Didn't Exist",
+                    notVeryEffective: "Didn't Exist",
+                    superEffective: "Didn't Exist",
+                },
+                defence: {
+                    noEffect: "Didn't Exist",
+                    notVeryEffective: "Didn't Exist",
+                    superEffective: "Didn't Exist",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Electric, Steel",
+                    superEffective: "Ice, Rock",
+                },
+                defence: {
+                    noEffect: "Poison",
+                    notVeryEffective: "Normal, Grass, Ice, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel",
+                    superEffective: "Fire, Fighting, Ground",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Water, Electric, Steel",
+                    superEffective: "Ice, Rock, Fairy",
+                },
+                defence: {
+                    noEffect: "Poison",
+                    notVeryEffective: "Normal, Grass, ice, Flying, Psychic, Bug, Rock, Dragon, Fairy",
+                    superEffective: "Fire, Fighting, Ground",
+                },
+            },
+        },
+    },
+    // FAIRY
+    {
+        name: {
+            en: "Fairy",
+            ja: "フェアリータイプ",
+        },
+        genAdded: 6,
+        images: {
+            tera: "https://archives.bulbagarden.net/media/upload/b/b0/TeraGem_Fairy.png",
+            symbol: "https://archives.bulbagarden.net/media/upload/b/b1/Fairy_icon_LA.png",
+            icon: "https://archives.bulbagarden.net/media/upload/c/c6/FairyIC_SV.png",
+        },
+        counters: {
+            moves: 33,
+            pokemon: {
+                total: 73,
+                singleType: 21,
+                dualType: 52,
+                gen1: 0,
+                gen2: 0,
+                gen3: 0,
+                gen4: 0,
+                gen5: 0,
+                gen6: 35,
+                gen7: 12,
+                gen8: 8,
+                gen9: 8,
+            },
+        },
+        stats: {
+            average: {
+                overall: {
+                    hp: 67.47,
+                    attack: 68.69,
+                    defense: 73.63,
+                    spAttack: 81.41,
+                    spDefense: 86.47,
+                    speed: 64.89,
+                    total: 442.56,
+                },
+                fullyEvolved: {
+                    hp: 75.22,
+                    attack: 85.51,
+                    defense: 89.24,
+                    spAttack: 96.22,
+                    spDefense: 101.20,
+                    speed: 77.88,
+                    total: 525.27,
+                },
+            },
+        },
+        typemaps: {
+            gen1: {
+                attack: {
+                    noEffect: "Didn't Exist",
+                    notVeryEffective: "Didn't Exist",
+                    superEffective: "Didn't Exist",
+                },
+                defence: {
+                    noEffect: "Didn't Exist",
+                    notVeryEffective: "Didn't Exist",
+                    superEffective: "Didn't Exist",
+                },
+            },
+            gen2: {
+                attack: {
+                    noEffect: "Didn't Exist",
+                    notVeryEffective: "Didn't Exist",
+                    superEffective: "Didn't Exist",
+                },
+                defence: {
+                    noEffect: "Didn't Exist",
+                    notVeryEffective: "Didn't Exist",
+                    superEffective: "Didn't Exist",
+                },
+            },
+            gen6: {
+                attack: {
+                    noEffect: "None",
+                    notVeryEffective: "Fire, Poison, Steel",
+                    superEffective: "Fighting, Dragon, Dark",
+                },
+                defence: {
+                    noEffect: "Dragon",
+                    notVeryEffective: "Fighting, Bug, Dark",
+                    superEffective: "Poison, Steel",
+                },
+            },
+        },
+    },
 ];
 module.exports = types;
