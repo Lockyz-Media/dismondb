@@ -44,7 +44,7 @@ Basically, the DismonDB is full of information on any of the below.
 -- Some hadn't been set when I updated the db to Gen 9 data
 
 ## Documentation
-This documentation is unfinished and will be worked on more when some variables are renamed.
+This documentation is unfinished and will be worked on more when some variables are renamed
 
 ### Typedex
 To access the typedex simply use the `typedex(typeName)` function
