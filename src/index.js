@@ -1,6 +1,6 @@
-const v1 = require("./v1/index.js");
-const v2 = require("./v2/index.js");
-const v3 = require("./v3/index.js");
+const v1 = require("./v1/index.json");
+const v2 = require("./v2/index.json");
+const v3 = require("./v3/index.json");
 const v4 = require("./v4/index.json");
 
 module.exports = {
