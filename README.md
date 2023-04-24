@@ -1,9 +1,11 @@
-![npm](https://img.shields.io/npm/v/pokemontypedex)
+![npm](https://img.shields.io/npm/v/dismondb)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/lockyz-dev/pokemontypedex)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Lockyz-Dev/pokemontypedex)
 
 # DismonDB
 The DismonDB is a node.js module that allows you to show information on all the Types in the Pokemon Games
+
+Documentation: https://lockyz-dev.github.io/pokemontypedex/global.html
 
 ## Features
 - Easy to use!
@@ -42,10 +44,3 @@ Basically, the DismonDB is full of information on any of the below.
 - Changed relevant strings to int and long
 - Updated outdated stat averages
 -- Some hadn't been set when I updated the db to Gen 9 data
-
-## Documentation
-This documentation is unfinished and will be worked on more when some variables are renamed
-
-### Typedex
-To access the typedex simply use the `typedex(typeName)` function
-The typedex function has an optional version paramater if you'd like to use versions 1-3 instead
