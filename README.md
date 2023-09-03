@@ -5,7 +5,7 @@
 # DismonDB
 The DismonDB is a node.js module that allows you to show information on all the Types in the Pokemon Games
 
-Documentation: https://lockyz-dev.github.io/pokemontypedex/global.html
+Documentation: dismondb.lockyzdev.net
 
 ## Features
 - Easy to use!
@@ -21,7 +21,7 @@ Basically, the DismonDB is full of information on any of the below.
 - MORE to come
 
 ## Installation
-`npm install pokemontypedex`
+`npm install dismondb`
 
 ## Current Update
 - ALL "versions" are now json files
