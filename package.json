@@ -7,7 +7,7 @@
     "test": "test.js"
   },
   "author": "Lockyz Dev <lockyzdev@gmail.com>",
-  "license": "ISC",
+  "license": "GPL-v3.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lockyz-Dev/pokemontypedex.git"
