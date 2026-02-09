@@ -2,10 +2,18 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/lockyz-dev/pokemontypedex)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Lockyz-Dev/pokemontypedex)
 
+# V5 Status
+V5 is currently conceptual in nature. At this point we're focusing on getting the schema down, and inserting example data (that may not be entirely correct)
+
+V5 may never release as an actual DismonDB update.
+
+# V5 plans
+- Remove ALL older versions of the typedex from this branch (these will be kept live in V4 however) as they have been deprecated for some time.
+- Update the index.js to actually serve the new schema
+- Add more functions for getting specific data instead of JUST the entire type information for each type.
+
 # DismonDB
 The DismonDB is a node.js module that allows you to show information on all the Types in the Pokemon Games
-
-Documentation: dismondb.lockyzdev.net
 
 ## Features
 - Easy to use!
