@@ -1,21 +1,18 @@
 {
   "name": "dismondb",
-  "version": "4.0.3",
+  "version": "4.0.5",
   "description": "A node module created to give users information from the Pokemon Games.",
   "main": "src/index.js",
   "scripts": {
     "test": "test.js"
   },
-  "author": "Lockyz Dev <lockyzdev@gmail.com>",
+  "author": "Lockyz Media <support@lockyzmedia.com>",
   "license": "GPL-v3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lockyz-Dev/pokemontypedex.git"
+    "url": "git+https://github.com/Lockyz-Media/dismondb.git"
   },
-  "bugs": {
-    "url": "https://tracker.lockyzdev.net"
-  },
-  "homepage": "https://github.com/Lockyz-Dev/pokemontypedex#readme",
+  "homepage": "https://github.com/Lockyz-Media/dismondb#readme",
   "devDependencies": {
   }
 }
