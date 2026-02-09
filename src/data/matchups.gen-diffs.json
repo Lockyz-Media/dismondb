@@ -1,0 +1,24 @@
+{
+    "gen1": {
+        "ghost": {
+            "psychic": 0
+        }
+    },
+    "gen2": {
+        "dark": {
+            "psychic": 2,
+            "ghost": 2
+        },
+        "steel": {
+            "rock": 0.5,
+            "ice": 0.5
+        }
+    },
+    "gen6": {
+        "fairy": {
+            "dragon": 2,
+            "dark": 2,
+            "fighting": 2
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "fire": {
+        "id": "fire",
+        "names": {
+            "en": "Fire",
+            "ja": "ほのおタイプ"
+        },
+        "colour": "#F08030",
+        "assets": {
+            "tera": "https://archives.bulbagarden.net/media/upload/9/94/TeraGem_Fire.png",
+			"symbol": "https://archives.bulbagarden.net/media/upload/4/48/Fire_icon_LA.png",
+			"icon": "https://archives.bulbagarden.net/media/upload/a/a2/FireIC_SV.png"
+        },
+        "introduced": 1
+    }
+}
